@@ -19,7 +19,7 @@ public class EvaluationModelController : Controller
         return View(await _context.Models.ToListAsync());
     }
 
-    public IActionResult Create()
+    public IActionResult CreateModel()
     {
         return View();
     }
@@ -60,6 +60,20 @@ public class EvaluationModelController : Controller
         if (ModelState.IsValid)
         {
             _context.Models.Update(model);
+            _context.SaveChanges();
+        }
+
+        return RedirectToAction("Index");
+    }
+
+    public IActionResult DeleteModel(int id)
+    {
+        if (_context.OnlineAccounts.Any(account => account.Id == id))
+        {
+            OnlineAccount accountToRemove = _context.OnlineAccounts.First(account => account.Id == id);
+
+            _context.OnlineAccounts.Remove(accountToRemove);
+
             _context.SaveChanges();
         }
 
