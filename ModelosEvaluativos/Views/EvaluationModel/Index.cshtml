@@ -45,8 +45,8 @@
                     @Html.DisplayFor(modelItem => item.estado)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    <a asp-controller="EvaluationModel" asp-action="EditModel" asp-route-id="@item.id">Edit</a> |
+                    <a asp-controller="EvaluationModel" asp-action="Delete" asp-route-id="@item.id">Delete</a>
                 </td>
             </tr>
     }

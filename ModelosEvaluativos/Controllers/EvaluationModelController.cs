@@ -47,4 +47,23 @@ public class EvaluationModelController : Controller
         return View(model);
     }
 
+    public IActionResult EditModel(int id)
+    {
+        var model = _context.Models.First(acct => acct.id == id);
+
+        return View(model);
+    }
+
+    [HttpPost]
+    public IActionResult EditModel(EvaluationModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            _context.Models.Update(model);
+            _context.SaveChanges();
+        }
+
+        return RedirectToAction("Index");
+    }
+
 }

@@ -1,0 +1,22 @@
+@model ModelosEvaluativos.Models.EvaluationModel
+
+<h2 class="p-2 m-2">Editar Modelo Evaluativo</h2>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="EditModel" method="post" class="p-2 m-2">
+     <div class="form-group">
+        <label>Id</label><input asp-for="id" class="form-control" disabled />
+    </div>
+    <div class="form-group">
+        <label>Nombre</label><input asp-for="nombre" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Descripción</label><input asp-for="descripcion" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Estado</label><input asp-for="estado" class="form-control" />
+    </div>
+    <br>
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary" value="Submit" />
+    </div>
+ </form>
