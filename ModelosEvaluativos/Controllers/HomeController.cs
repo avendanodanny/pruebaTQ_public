@@ -23,16 +23,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult EvaluationModel()
-    {
-        return View();
-    }
-
-    public IActionResult Califications()
-    {
-        return View();
-    }
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
