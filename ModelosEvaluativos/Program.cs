@@ -1,4 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using ModelosEvaluativos.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure DbContext with PostgreSQL connection
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
