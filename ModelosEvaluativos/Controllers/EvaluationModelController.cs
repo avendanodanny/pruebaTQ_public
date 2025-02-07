@@ -68,11 +68,11 @@ public class EvaluationModelController : Controller
 
     public IActionResult DeleteModel(int id)
     {
-        if (_context.OnlineAccounts.Any(account => account.Id == id))
+        if (_context.Models.Any(account => account.id == id))
         {
-            OnlineAccount accountToRemove = _context.OnlineAccounts.First(account => account.Id == id);
+            EvaluationModel modelToRemove = _context.Models.First(account => account.id == id);
 
-            _context.OnlineAccounts.Remove(accountToRemove);
+            _context.Models.Remove(modelToRemove);
 
             _context.SaveChanges();
         }
